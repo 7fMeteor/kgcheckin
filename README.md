@@ -34,9 +34,9 @@ GitHub Actions 实现 `酷狗概念VIP` 自动签到
    2.1 二维码(推荐)<br>
    自动写入secret(可选)
    - **创建GitHub Personal Access Token**  
-     1.登录您的 GitHub 账号
-     2.访问 [Token设置页面](https://github.com/settings/tokens)
-     3.点击"Generate new token" > "Fine-grained tokens" or "Generate new token (classic)"
+     1. 登录您的 GitHub 账号
+     2. 访问 [Token设置页面](https://github.com/settings/tokens)
+     3. 点击"Generate new token" > "Fine-grained tokens" or "Generate new token (classic)"
 
    - **在设置页面配置权限**  
      **Note 备注**：随意填写  
