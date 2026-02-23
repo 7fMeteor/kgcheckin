@@ -33,23 +33,35 @@ GitHub Actions 实现 `酷狗概念VIP` 自动签到
 
    2.1 二维码(推荐)<br>
    自动写入secret(可选)
-   - **创建令牌**  
-     复制下方官网链接，在浏览器中打开
+   - **创建GitHub Personal Access Token**  
+     1.登录您的 GitHub 账号
+     2.访问 [Token设置页面](https://github.com/settings/tokens)
+     3.点击"Generate new token" > "Fine-grained tokens" or "Generate new token (classic)"
 
-     ```
-     https://github.com/settings/tokens/new
-     ```
-
-   - **登录 GitHub 官网**  
-     若登陆后未跳转至token生成页，请再次粘贴链接进行访问
    - **在设置页面配置权限**  
      **Note 备注**：随意填写  
      **Expiration (有效期)**：建议选择 "No expiration" 永不过期或自定义时间  
-     **Select scopes (权限)**：所有勾选框都打勾
-   - 滑动到底部，点击绿色的 Generate token 保存按钮
-   - 复制生成的字符串 (ghp\_开头)，回到本仓库添加到`Secret` 变量名 `PAT` value `复制的令牌`
+     **Select scopes (权限)**：
+     您只需要为 Token 配置最小必要的权限。
+     如果使用**Fine-grained tokens**(更精细的权限控制):
+     1. 选择只对您的**kgcheckin**仓库有效
+     2. 将 "secrets" 设为 "Read and write"
 
-   运行 Actions `qrcodeLogin` 并进入(若不显示,可以刷新页面)，点击run -> 展开二维码登录, 根据提示操作即可。
+     如果使用**Generate new token (classic)**:
+
+     **如果是公开仓库**，选择以下权限：
+     - `repo` > `public_repo` (仅访问公开仓库)
+     - `codespace` > `codespace:secrets`
+
+     **如果是私有仓库**，选择以下权限：
+     - `repo` (完整的仓库访问，包括私有仓库)
+     - `codespace` > `codespace:secrets`
+
+   - 滑动到底部，点击绿色的 Generate token 保存按钮
+   - **立即复制生成的token**（离开页面后将无法再次查看）
+   - 将复制的token添加到您fork的**kgcheckin**仓库的GitHub Secrets中，命名为 `PAT`
+
+   运行 Actions `qrcodeLogin` 并进入(若不显示,可以刷新页面)，点击run -> 展开二维码登录,将data开头的base64编码的图片在浏览器打开，用酷狗概念版扫码登录，根据提示操作即可。
 
    2.2 手机号
 
