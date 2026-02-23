@@ -43,6 +43,7 @@ GitHub Actions 实现 `酷狗概念VIP` 自动签到
      **Expiration (有效期)**：建议选择 "No expiration" 永不过期或自定义时间  
      **Select scopes (权限)**：
      您只需要为 Token 配置最小必要的权限。
+
      如果使用**Fine-grained tokens**(更精细的权限控制):
      1. 选择只对您的**kgcheckin**仓库有效
      2. 将 "secrets" 设为 "Read and write"
